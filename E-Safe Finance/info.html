@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Safe Finance</title>
+        <link rel="icon" href="img/icon.png" type="image/x-icon">
+        <style>
+            .nav {
+                position : fixed;
+                top : 0;
+                left : 0;
+                display : flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width : 100vw;
+                height : 50px;
+                background-image: linear-gradient(to right, rgb(100,64,255), rgb(255,100,255));
+                color : white;
+            }
+            .nav h3, .nav h2 {
+                cursor : pointer;
+                transition: transform 0.5s;
+            }
+            .content {
+                padding-top : 50px;
+            }
+            .content h2 {
+                color : rgb(178,82,255);
+            }
+            .content p, .content li {
+                font-size : 1.2em;
+                line-height: 1.75;
+                margin : 0;
+            }
+            .point {
+                color : rgb(100,64,255);
+                font-weight : bold;
+            }
+            img {
+                width : 50%;
+                height : 50%;
+                float : right;
+            }
+        </style>
+        <script>
+            function hash_changer() {
+                let hash = window.location.hash;
+                let tags = document.getElementsByClassName("nav")[0].children;
+                for(let index = 1; index<tags.length; index++)
+                    tags[index].style.transform="scale(1)";
+                switch(hash) {
+                    case "#personal":
+                        tags[1].style.transform = "scale(1.5)";
+                        break;
+                    case "#nri":
+                        tags[2].style.transform = "scale(1.5)";
+                        break;
+                    case "#business":
+                        tags[3].style.transform = "scale(1.5)";
+                        break;
+                    case "#agricultural&rural":
+                        tags[4].style.transform = "scale(1.5)";
+                        break;
+                    case "#international":
+                        tags[5].style.transform = "scale(1.5)";
+                        break;
+                    case "#wealth":
+                        tags[6].style.transform = "scale(1.5)";
+                        break;
+                    default:
+                        window.location.hash="#personal";
+                }
+            }
+            
+            function checkElementTop() {
+                let ntags = document.getElementsByClassName("nav")[0].children;
+                for(let index = 1; index<ntags.length; index++)
+                    ntags[index].style.transform="scale(1)";
+                let ctags = document.getElementsByClassName("content");
+                for(let index=ctags.length-1; index>=0; index--) {
+                    var bounding = ctags[index].getBoundingClientRect();
+                    if (bounding.top <= 10) {
+                        ntags[index+1].style.transform = "scale(1.5)";
+                        break;
+                    }
+                }
+            }
+
+            window.addEventListener("DOMContentLoaded", hash_changer);
+            window.addEventListener("hashchange", hash_changer);
+            window.addEventListener("scroll", checkElementTop);
+        </script>
+    </head>
+    <body>
+        <div class="nav">
+            <h2 onclick="window.location='../E-Safe Finance'">Home</h2>
+            <h3 onclick="window.location.hash='#personal'">Personal</h3>
+            <h3 onclick="window.location.hash='#nri'">NRI</h3>
+            <h3 onclick="window.location.hash='#business'">Business</h3>
+            <h3 onclick="window.location.hash='#agricultural&rural'">Agricultural & Rural</h3>
+            <h3 onclick="window.location.hash='#international'">International Banking</h3>
+            <h3 onclick="window.location.hash='#wealth'">E-Safe Wealth</h3>
+        </div>
+        <div id="personal" class="content">
+            <h2>PERSONAL</h2>
+            <p> E-safe Bank is an Indian Multinational, Public Sector Banking and Financial services statutory body headquartered in Mumbai. The rich heritage and legacy of over 200 years, accredits E-safe as the most trusted Bank by Indians through generations. E-safe, the largest Indian Bank with 1/4th market share, serves over 48 crore customers through its vast network of over 22,405 branches, 65,627 ATMs/ADWMs, 76,089 BC outlets, with an undeterred focus on innovation, and customer centricity, which stems from the core values of the Bank - Service, Transparency, Ethics, Politeness and Sustainability. The Bank has successfully diversified businesses through its various subsidiaries i.e E-safe General Insurance, E-safe Life Insurance, E-safe Mutual Fund , etc. It has spread its presence globally and operates across time zones through 235 offices in 29 foreign countries. Growing with times, E-safe continues to redefine banking in India, as it aims to offer responsible and sustainable Banking solutions.</p>
+        </div>
+        <div id="nri" class="content">
+            <h2>NRI</h2>
+            <p>E-SAFE (E-safe finance ) offers a range of services and products tailored specifically for Non-Resident Indians (NRIs). Here's some information about E-Safe NRI services:</p>
+            <ul>
+                <li><span class="point">NRI Accounts: </span>E-Safe provides various types of NRI accounts, including NRE (Non-Resident External), NRO (Non-Resident Ordinary), FCNR (Foreign Currency Non-Resident), and RFC (Resident Foreign Currency) accounts. Each type of account has its own features and benefits.</li>
+                <li><span class="point">Account Opening: </span>NRIs can open accounts with  E-Safe by visiting an  E-Safe  branch overseas or an NRI branch in India. The required documentation usually includes a valid passport, visa, proof of address abroad, passport-size photographs, and sometimes additional documents depending on the type of account and regulatory requirements.</li>
+                <li><span class="point">Remittances: </span>E-Safe  facilitates easy and secure remittance services for NRIs to transfer funds to India or abroad. This includes inward remittances to India and outward remittances from India for various purposes such as investments, family support, or personal expenses.</li>
+                <li><span class="point">Investment Services: </span>E-Safe offers investment services tailored to NRIs, including the ability to invest in stocks, mutual funds, bonds, and other financial instruments in India.  E-Safe  also provides guidance and assistance on investment opportunities and regulatory compliance.</li>
+                <li><span class="point">Home Loans and Mortgages: </span>E-Safe offers home loans and mortgage services for NRIs looking to invest in property in India. These services include competitive interest rates, flexible repayment options, and dedicated customer support for NRI borrowers.</li>
+                <li><span class="point">Taxation and Compliance: </span>E-Safe  provides information and assistance regarding tax regulations and compliance requirements for NRIs. This includes guidance on tax implications of various financial transactions, as well as assistance with obtaining Tax Identification Numbers (TIN) and filing tax returns in India.</li>
+                <li><span class="point">Customer Support: </span>E-Safe  offers dedicated customer support services for NRIs, including specialized NRI helplines, online banking platforms, and assistance with account-related queries, transactions, and other services.</li>
+                <li><span class="point">Power of Attorney: </span>E-Safe  facilitates the appointment of Power of Attorney (POA) for NRIs to manage their financial affairs in India. This allows NRIs to authorize a trusted individual to act on their behalf for various banking and financial transactions.</li>
+                <li><span class="point">Online Banking: </span>E-Safe  offers robust online banking facilities for NRIs, allowing them to conveniently manage their accounts, track transactions, transfer funds, pay bills, and access a range of other banking services from anywhere in the world.</li>
+            </ul>
+        </div>
+        <div id="business" class="content">
+            <h2>BUSINESS</h2>
+            <ul>
+                <li><span class="point">Corporate Banking: </span>E-Safe offers a wide range of corporate banking services to businesses of all sizes, including large corporations, SMEs (Small and Medium Enterprises), and MSMEs (Micro, Small, and Medium Enterprises). These services include working capital financing, term loans, trade finance, cash management, and treasury services.</li>
+                <li><span class="point">International Banking: </span>E-Safe  has a strong presence in international banking, with branches and subsidiaries in key global financial centers. It offers a comprehensive suite of international banking services, including trade finance, correspondent banking, foreign exchange services, cross-border remittances, and international treasury operations.</li>
+                <img src="img/business.png" alt="Business">
+                <li><span class="point">Investment Banking: </span>E-Safe provides investment banking services to corporate clients, including advisory services for mergers and acquisitions, capital raising through debt and equity issuances, project financing, debt restructuring, and other corporate finance transactions.</li>
+                <li><span class="point">Government Banking: </span>As India's largest public sector bank, E-Safe  plays a crucial role in providing banking services to the government sector. It manages government accounts, facilitates disbursement of subsidies and social welfare payments, participates in government bond auctions, and provides treasury services to government agencies.</li>
+                <li><span class="point">Digital Banking: </span>E-Safe has invested significantly in digital banking technology to enhance customer experience and streamline business processes. It offers a range of digital banking solutions for businesses, including online banking platforms, mobile banking apps, electronic payment systems, and digital trade finance services.</li>
+                <li><span class="point">Risk Management: </span>E-Safe has robust risk management systems and processes in place to identify, assess, and mitigate various types of risks, including credit risk, market risk, operational risk, and compliance risk. It employs sophisticated risk modeling techniques and engages in regular risk assessments to ensure the safety and soundness of its operations.</li>
+                <li><span class="point">Sustainability Initiatives: </span>E-Safe is committed to sustainability and social responsibility. It actively promotes financial inclusion and supports initiatives aimed at empowering marginalized communities, promoting environmental sustainability, and fostering inclusive economic growth. E-Safe also integrates environmental, social, and governance (ESG) considerations into its business practices and decision-making processes.</li>
+                <li><span class="point">Customer Service: </span>E-Safe  places a strong emphasis on customer service and strives to provide businesses with personalized, responsive, and efficient banking services. It offers dedicated relationship managers for corporate clients, specialized customer support teams, and online self-service tools to address the diverse needs of businesses.</li>
+            </ul>
+        </div>
+        <div id="agricultural&rural" class="content">
+            <h2>AGRICULTURAL & RURAL</h2>
+            <ul>
+                <img src="img/agricultural&rural.png" alt="Agricultural & Rural">
+                <li><span class="point">Agricultural Loans: </span>E-Safe offers a range of loan products tailored to the needs of farmers and agricultural enterprises. These include crop loans, term loans for farm mechanization, land development, irrigation, and other agricultural activities. E-Safe provides competitive interest rates, flexible repayment terms, and customized loan structures to suit the requirements of farmers.</li>
+                <li><span class="point">Rural Banking: </span>E-Safe operates a vast network of branches in rural and semi-urban areas across India, providing essential banking services to rural communities. These branches offer savings accounts, recurring deposits, fixed deposits, and other deposit products tailored to the needs of rural customers.</li>
+                <li><span class="point">Financial Inclusion: </span>E-Safe is committed to promoting financial inclusion and extending banking services to underserved and unbanked regions of rural India. It participates in various government-led initiatives such as the Pradhan Mantri Jan Dhan Yojana (PMJDY), which aims to provide universal access to banking services, including savings accounts, remittances, insurance, and pension facilities, to all households in India.</li>
+                <li><span class="point">Rural Development Programs: </span>E-Safe collaborates with government agencies, non-governmental organizations (NGOs), and other stakeholders to implement rural development programs aimed at improving livelihoods, enhancing agricultural productivity, and promoting sustainable rural development. These programs may include capacity building initiatives, skill development programs, and support for rural entrepreneurship and self-employment.</li>
+                <li><span class="point">Agri-Business Financing: </span>E-Safe provides financing solutions to support agri-businesses, including agricultural input suppliers, food processing units, agri-logistics companies, and agricultural exporters. These financing solutions may include working capital loans, term loans for infrastructure development, trade finance facilities, and other financial products tailored to the needs of agri-businesses.</li>
+                <li><span class="point">Crop Insurance: </span>E-Safe facilitates the distribution of crop insurance products to farmers through tie-ups with insurance companies and government agencies. Crop insurance provides financial protection to farmers against crop losses due to natural calamities, pests, diseases, and other risks, helping to safeguard their livelihoods and mitigate agricultural risks.</li>
+                <li><span class="point">Technology Adoption: </span>E-Safe promotes the adoption of technology and digital solutions in agriculture and rural banking to enhance efficiency, transparency, and access to financial services. This includes initiatives such as mobile banking, internet banking, point-of-sale (POS) terminals, and digital payment solutions tailored to rural customers.</li>
+            </ul>
+        </div>
+        <div id="international" class="content">
+            <h2>INTERNATIONAL BANKING</h2>
+            <p>E-Safe Finance  has a significant presence in international banking, with a range of services tailored to meet the needs of its customers globally. Here's an overview of  E-Safe  international banking services:</p>
+            <li><span class="point">Global Presence: </span>E-Safe  has a widespread international presence with branches, subsidiaries, and representative offices in key financial centers around the world. These include locations in the United States, United Kingdom, Canada, Singapore, Hong Kong, UAE, Qatar, Bahrain, and many other countries.</li>
+            <li><span class="point">Correspondent Banking: </span>E-Safe  provides correspondent banking services to facilitate cross-border transactions and trade finance activities. Through its extensive network of correspondent banks,  E-Safe  offers clearing, settlement, and payment services in various currencies, helping businesses and individuals conduct international transactions efficiently.</li>
+            <li><span class="point">Trade Finance: </span>E-Safe  offers a comprehensive suite of trade finance solutions to support international trade and commerce. This includes import and export financing, letters of credit (LCs), bank guarantees, documentary collections, trade credit insurance, and other trade-related services to facilitate smooth and secure trade transactions between buyers and sellers across borders.</li>
+            <img src="img/international.png" alt="International Banking">
+            <li><span class="point">Foreign Exchange Services: </span>E-Safe  provides foreign exchange services to meet the currency exchange needs of its customers. This includes spot and forward foreign exchange transactions, currency swaps, hedging solutions, and foreign exchange risk management advisory services for corporates, financial institutions, and individuals engaged in international business.</li>
+            <li><span class="point">Remittance Services: </span>E-Safe  offers secure and efficient remittance services for individuals and businesses to transfer funds internationally. These services include inward and outward remittances, cross-border money transfers, foreign currency drafts, and instant money transfer facilities through partnerships with global remittance providers.</li>
+            <li><span class="point">NRI Services: </span>E-Safe  caters to the banking needs of Non-Resident Indians (NRIs) through specialized NRI banking services. This includes NRI accounts (NRE, NRO, FCNR), remittance facilities, investment services, home loans for NRIs, and dedicated customer support for NRIs to manage their finances from abroad.</li>
+            <li><span class="point">International Treasury Operations: </span>E-Safe's international treasury operations engage in foreign exchange trading, interest rate risk management, liquidity management, and investment activities in global financial markets.  E-Safe's treasury teams monitor market developments, execute trades, and manage  E-Safe's foreign exchange and interest rate exposures to optimize returns and mitigate risks.</li>
+            <li><span class="point">Cross-Border Investment Services: </span>E-Safe  offers investment services to facilitate cross-border investments for its clients. This includes assistance with investing in global financial markets, foreign securities, mutual funds, and other investment products, as well as advisory services on international investment opportunities and regulatory compliance.</li>
+        </div>
+        <div id="wealth" class="content">
+            <h2>E-SAFE WEALTH</h2>
+            <p>E-Safe  Wealth, also known as SBI Wealth Management Services, is a specialized division of State Bank of India (E-Safe ) that caters to high net worth individuals (HNIs) and affluent clients, offering personalized wealth management and advisory services. Here's an overview of SBI Wealth and its key features:</p>
+            <ul>
+                <img src="img/wealth.png" alt="E-Safe Wealth">
+                <li><span class="point">Client Segmentation: </span>E-Safe  Wealth primarily caters to high net worth individuals (HNIs) and affluent clients who have substantial assets and complex financial needs. The division offers tailored wealth management solutions and personalized services to meet the unique requirements of its clients.</li>
+                <li><span class="point">Comprehensive Wealth Management Services: </span>E-Safe  Wealth provides a wide range of wealth management services, including investment advisory, portfolio management, financial planning, estate planning, tax planning, retirement planning, and succession planning. The division's experienced wealth managers work closely with clients to develop customized strategies to grow and preserve their wealth over the long term.</li>
+                <li><span class="point">Investment Products and Solutions: </span>E-Safe  Wealth offers access to a diverse range of investment products and solutions to help clients achieve their financial goals. This includes equity investments, mutual funds, fixed income products, structured products, alternative investments, real estate investments, offshore investments, and more. The division provides expert advice and recommendations on suitable investment opportunities based on clients' risk tolerance, investment objectives, and time horizon.</li>
+                <li><span class="point">Exclusive Privileges and Benefits: </span>E-Safe  Wealth clients may receive exclusive privileges and benefits, such as preferential pricing, priority banking services, dedicated relationship managers, access to premium banking facilities, invitations to exclusive events and seminars, and other value-added services designed to enhance the overall banking experience.</li>
+                <li><span class="point">Technology and Digital Solutions: </span>E-Safe  Wealth leverages technology and digital solutions to enhance the convenience and accessibility of its services. Clients may have access to online wealth management platforms, mobile apps, digital advisory tools, and electronic trading platforms to monitor their portfolios, track investments, and execute transactions seamlessly.</li>
+                <li><span class="point">Risk Management and Compliance: </span>E-Safe  Wealth adheres to stringent risk management and compliance standards to safeguard clients' assets and maintain regulatory compliance. The division employs robust risk assessment processes, due diligence procedures, and internal controls to manage investment risks effectively and ensure transparency and accountability in its operations.</li>
+                <li><span class="point">Holistic Wealth Management Approach: </span>E-Safe  Wealth adopts a holistic wealth management approach that considers clients' overall financial situation, objectives, and aspirations. Wealth managers work closely with clients to develop comprehensive financial plans that address their short-term and long-term goals, incorporating various aspects of wealth management, including investment management, retirement planning, tax planning, estate planning, and risk management.</li>
+            </ul>
+        </div>
+    </body>
+</html>

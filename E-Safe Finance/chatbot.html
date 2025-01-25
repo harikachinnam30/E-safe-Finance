@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat Here</title>
+        <link rel="icon" href="img/icon.png" type="image/x-icon">
+        <style>
+            body {
+                background-image : linear-gradient(to right, rgba(100,64,255,0.3), rgba(255,100,255,0.3));
+            }
+            #chat {
+                display : flex;
+                flex-direction : column;
+                max-height : calc(100vh - 100px);
+                overflow : scroll;
+            }
+            .received {
+                max-width : 60%;
+                background-color : rgb(100,64,255);
+                padding : 10px;
+                margin : 10px;
+                border-radius : 0 10px 10px;
+            }
+            .sent {
+                max-width : 60%;
+                background-color : rgb(255,100,255);
+                padding : 10px;
+                margin : 10px;
+                border-radius : 10px 10px 0;
+                float : right;
+            }
+            #textbox {
+                position : fixed;
+                bottom : 25px;
+                left : 50%;
+                transform : translateX(-50%);
+                min-width : min(100vw, 400px);
+            }
+            button {
+                background-color : rgb(172,82,255);
+                border : none;
+                padding : 15px 0;
+                border-radius : 0 10px 10px 0;
+                color : white;
+                width : 20%;
+                cursor : pointer;
+            }
+            input {
+                border : none;
+                border-radius : 10px 0 0 10px;
+                padding : 15px;
+                outline-color : rgb(172,82,255);
+                width : calc(80% - 30px);
+            }
+        </style>
+        <script>
+            function addtochat() {
+                document.getElementById("chat").innerHTML += "<div><div class='sent'>"+document.getElementById("text").value+"</div></div>";
+                reply();
+                document.getElementById("text").value = "";
+                document.getElementById("text").focus();
+            }
+            function enterkey(e) {
+                if(e.keyCode==13&&!e.shiftKey)
+                    addtochat();
+            }
+            function reply() {
+                let text = document.getElementById("text").value;
+                switch(text) {
+                    case "show balance":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>You can check your account balance by logging into your online banking account and navigating to the 'Account Details' section</div></div>";
+                        break;
+                    case "change password":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>To change your password, you can log in to your online banking account and navigate to the 'Profile' option. From there, you'll have the option to edit your password. Make sure to review and save your changes to ensure that your account is safe</div></div>";
+                        break;
+                    case "I forgot my username":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>If you forgot your username, you should contact or try reaching the bank. Since the username is like an account number to the account, it is mandatory to do any banking activities. You can get assist from our staff in retrieving your username</div></div>";
+                        break;
+                    case "FAQs":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>Here are some possible questions you may have,<br>> I forgot my online banking password. How can I reset it?<br>> Can I have multiple accounts?<br>> Can I transfer money between my accounts?<br>> How do I report a suspicious transaction on my account?<br>> What security measures are in place to protect my online banking account?<br>> How do I update my contact information on my account?<br>> How do I close my account?</div></div>";
+                        break;
+                    case "raise a complaint":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>I am sorry to hear that<br>you can directly complaint your issue to the bank through the mail. please click on the below button to raise the complaint<div onclick='window.open(\"mailto:chinnikrishna854@gmail.com\")' style='background-color:red; cursor:pointer; padding:5px; border-radius:5px; text-align:center;'>complaint!</div></div></div>";
+                        break;
+                    case "I forgot my online banking password. How can I reset it?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>Sorry, we don't have an option to reset the password yet. You need to reach your closest bank to get help</div></div>";
+                        break;
+                    case "Can I have multiple accounts?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>Sorry, our bank don't allow multiple accounts to a person</div></div>";
+                        break;
+                    case "Can I transfer money between my accounts?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>Sorry, our bank don't allow multiple accounts to a person</div></div>";
+                        break;
+                    case "How do I report a suspicious transaction on my account?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>If you notice any suspicious activity or unauthorized transactions on your account, it's important to report it immediately. You can report a suspicious transaction by contacting our customer support team or by visiting your nearest branch. Our representatives will assist you in investigating the transaction and taking appropriate action to secure your account</div></div>";
+                        break;
+                    case "What security measures are in place to protect my online banking account?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>We employ various security measures to protect your online banking account and ensure the safety of your personal and financial information. Additionally, we recommend practicing good security habits, such as using strong passwords, avoiding public Wi-Fi for banking activities, and keeping your login credentials confidential</div></div>";
+                        break;
+                    case "How do I update my contact information on my account?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>To update your contact information, such as your phone number or email address, you can log in to your online banking account and navigate to the 'Profile' option. From there, you'll have the option to edit your contact details. Make sure to review and save your changes to ensure that your account information is up to date</div></div>";
+                        break;
+                    case "How do I close my account?":
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>If you wish to close your account, we recommend contacting our customer support team or visiting your nearest branch to initiate the account closure process. Our representatives will guide you through the necessary steps and provide any additional information you may need, such as resolving any pending transactions or transferring remaining funds to another account</div></div>";
+                        break;
+                    default:
+                        document.getElementById("chat").innerHTML+="<div><div class='received'>what can I do for you?<br>> show balance<br>> change password<br>> I forgot my username<br>> FAQs<br>> raise a complaint</div></div>";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="chat"></div>
+        <div id="textbox"><input type="text" id="text" autofocus onkeypress="enterkey(event)" placeholder="Try sending a text"><button onclick="addtochat()">send</button></div>
+    </body>
+</html>

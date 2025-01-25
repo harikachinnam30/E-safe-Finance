@@ -1,0 +1,112 @@
+.container {
+    background-color: rgba(127,255,212,0.5);
+    border-radius: 10px;
+    position: absolute;
+    left : 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    min-width: 500px;
+    text-align: center;
+}
+
+.con {
+    display : grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    width: 96vw;
+    height: 90vh;
+    text-align: center;
+}
+
+.psv-con {
+    background-image : url('../img/psv_con.avif');
+    background-repeat : no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-width: 300px;
+    width : 100%;
+    height: 100%;
+}
+
+.atv-con {
+    background-color: rgba(127,255,212,0.5);
+    min-width: 300px;
+    width : 100%;
+    height : 100%;
+}
+
+.form-con {
+    display : flex;
+    flex-direction: column;
+    border : 1px solid rgba(0,255,127,0.5);
+    background-color: rgb(0,255,255,0.4);
+    border-radius: 15px;
+    padding: 1%;
+}
+
+.form-items {
+    display: flex;
+    justify-content: space-between;
+    height : auto;
+    align-items: center;
+    margin: 10px 10%;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(0,0,127), rgb(0,127,255), rgb(0,185,255));
+}
+
+.heading {
+    text-align: left;
+    padding-left : 5%;
+}
+
+h1, h2, h3 {
+    font-family: Georgia;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+form {
+    margin : 10%;
+}
+
+label {
+    cursor : pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+input, select {
+    outline-color : cyan;
+    accent-color: cyan;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="date"], input[type="password"], select {
+    width : 60%;
+    height : 30px;
+    margin: 10px 0px;
+}
+
+input[type="submit"] {
+    font-family: monospace;
+    font-size: 1.2em;
+    cursor: pointer;
+    width : 50%;
+    height : 50px;
+    border : none;
+    border-radius: 10px;
+    background-color: cyan;
+}
+
+textarea {
+    resize: none;
+    outline-color: cyan;
+}
